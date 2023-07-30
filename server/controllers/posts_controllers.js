@@ -39,8 +39,19 @@ export const getAllPosts = async (req, res) => {
     const all_posts = await Post.find().select(
       "city price room_type capacity tags photos_url"
     );
-    res.status(201).json(all_posts);
+    res.status(200).json(all_posts);
   } catch (err) {
     res.status(500).json({ message: err.message });
+  }
+};
+
+export const getPost = async (req, res) => {
+  try {
+    // Se devuelven todos los campos del post del id
+    const { post_id } = req.params;
+    const post = await Post.findById(post_id);
+    res.status(200).json(post);
+  } catch (err) {
+    res.status(404).json({ message: err.message });
   }
 };

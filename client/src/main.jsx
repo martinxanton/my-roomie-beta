@@ -6,6 +6,7 @@ import Filters from './pages/filters.jsx'
 import Header from './components/header.jsx'
 import Footer from './components/footer.jsx'
 import Navbar from './components/nabvar.jsx'
+import RoomieCards from './components/rommieCards.jsx'
 import Login from './pages/login.jsx'
 import Register from './pages/register.jsx'
 
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Header />
     <Navbar />
     <App />
+    <RoomieCards />
     <Filters />
     <Footer />
     <Login />

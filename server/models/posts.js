@@ -2,35 +2,45 @@ import mongoose from "mongoose";
 
 const postSchema = new mongoose.Schema(
   {
-    direccion: {
+    address: {
       type: String,
-      required: true,
+      required: [true, "Address is required"],
     },
-    ciudad: {
+    city: {
       type: String,
-      required: true,
+      required: [true, "City is required"],
     },
-    precio: {
+    price: {
       type: Number,
+      required: [true, "Price is required"],
       get: (v) => (v / 100).toFixed(2),
       set: (v) => v * 100,
     },
-    tipo: {
+    room_type: {
       // "Cuarto", "Departamento", "Casa"
       type: String,
-      required: true,
+      required: [true, "Room type is required"],
     },
-    caracteristicas: {
-      // array de tags: ["Baño propio", "Elevador", "Parque"]
+    capacity: {
+      // número de roomies
+      type: Number,
+      required: [true, "Capacity is required"],
+    },
+    tags: {
+      // array de características: ["Baño propio", "Elevador", "Parque"]
       type: [String],
       default: [],
     },
-    descripcion: String,
-    nro_roomies: Number,
-    url_fotos: {
+    description: {
+      type: String,
+      default: "",
+    },
+    photos_url: {
       // arreglo de url de las fotos del post
       type: [String],
-      default: [],
+      default: [
+        "https://images.freeimages.com/images/large-previews/eae/roomz-5-1231926.jpg",
+      ],
     },
   },
   {

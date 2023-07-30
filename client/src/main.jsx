@@ -7,6 +7,7 @@ import Header from './components/header.jsx'
 import Footer from './components/footer.jsx'
 import ModalWindowFilters from './components/modalWindowFilters.jsx'
 import Navbar from './components/nabvar.jsx'
+import RoomieCards from './components/rommieCards.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Header />
     <Navbar />
     <App />
+    <RoomieCards />
     <ModalWindowFilters />
     <Filters />
     <Footer />
